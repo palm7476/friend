@@ -32,4 +32,28 @@ class ItemController extends Controller
         // dd($item);
         return $item;
     }
+    public function createbrand(){
+        // dd('5555');
+        $Brand = Brand::create([
+            'name' => request('names')
+        ]);
+        // dd($Brand);
+        return [
+            'status' => 'success',
+            'data' => $Brand
+        ];
+    }
+
+
+    public function showbrand(){
+        $Brand = Brand::get();
+        // dd($Brand);
+        return $Brand;
+    }
+
+    public function showtype(){
+        $Type = Type::get();
+        // dd($Type);
+        return $Type;
+    }
 }

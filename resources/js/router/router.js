@@ -10,6 +10,7 @@ import ProductEdit from '../product/edit.vue'
 import ProductSearch from '../product/search.vue'
 
 import Item from '../item/index.vue'
+import ItemCreate from '../item/create.vue'
 
 import User from '../user/index.vue'
 
@@ -27,6 +28,9 @@ export default new VueRouter({
         {path: '/productsearch',name: 'ProductSearch' ,component: ProductSearch},
 
         {path: '/item',name: 'Item' , component: Item},
+        {path: '/itemcreate',name: 'ItemCreate' , component: ItemCreate},
+
         {path: '/user',name: 'User' , component: User}
+
     ]
 });

@@ -12,7 +12,7 @@
           <th><b-button variant="success" @click="getdata()">ok</b-button></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-if="datas">
           <!-- <tr>
 
               <td>{{ datas[10].name }}</td>

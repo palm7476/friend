@@ -51,8 +51,13 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('/delete','ProductController@delete');
     Route::post('/save','ProductController@save');
 
-    Route::get('showuserlogin','UserController@show');
-    Route::get('showuser','UserController@showuser');
+    Route::get('/showuserlogin','UserController@show');
+    Route::get('/showuser','UserController@showuser');
+
+    Route::get('/showbrand','ItemController@showbrand');
+    Route::post('/createbrand','ItemController@createbrand');
+
+    Route::get('/showtype','ItemController@showtype');
 
     Route::get('/logout','Auth\LoginController@logout');
 });

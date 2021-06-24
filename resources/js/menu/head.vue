@@ -6,9 +6,21 @@
             <button type="button" class="btn btn-info" @click="search()">Search</button>
             <button type="button" class="btn btn-warning" @click="productcreate()">Product Create</button>
             <button type="button" class="btn btn-warning" @click="productsearch()">Product Search</button>
+
+            <div class="btn btn-warning">
+                <select v-model="selected" class="form-select" aria-label="Default select example" @change="selectpage()">
+                    <option value="0" selected>select item</option>
+                    <option value="Item">Show Item</option>
+                    <option value="ItemCreate">Create</option>
+                    <!-- <option value="3">Three</option> -->
+                </select>
+            </div>
+
             <button type="button" class="btn btn-secondary" @click="user()">User</button>
             <button type="button" class="btn btn-danger" @click="logout()">Logout</button>
             <button type="button" class="btn btn-link">{{ datas.username }}</button>
+
+
             <!-- <div>{{ datas.username }}</div> -->
         </div>
     </div>
@@ -18,8 +30,8 @@ export default {
     data() {
         return {
 
-        datas : []    
-
+        datas : []    ,
+        selected: '0'
         }
         
     },
@@ -57,6 +69,14 @@ export default {
             }).then((response)=>{
                 this.datas=response.data;
             })
+        },
+        selectpage(){
+            if(this.selected == "Item"){
+                this.$router.push({name:this.selected});
+            }
+            if(this.selected == "ItemCreate"){
+                this.$router.push({name:this.selected});
+            }
         }
 
     },
